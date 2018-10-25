@@ -5,7 +5,7 @@
     <header class="header-sky">
         <div class="container">
             <!--HEADER-TOP-->
-            <div class="header-top">
+            <!-- <div class="header-top">
                 <div class="header-top-left">
                     <span><i class="ion-android-cloud-outline"></i>18 °C</span>
                     <span><i class="ion-ios-location-outline"></i> 121 King Str, Melbourne Victoria</span>
@@ -31,7 +31,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <!-- END/HEADER-TOP -->
         </div>
         <!-- MENU-HEADER -->
@@ -316,10 +316,86 @@
             <div class="outline"></div>
             <p class="rooms-p">When you host a party or family reunion, the special celebrations let you streng then
                 bonds with</p>
+
             <div class="wrap-rooms">
                 <div class="row">
                     <div id="rooms" class="owl-carousel owl-theme">
-                        <div class="item ">
+                        <div class="item">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let room of this.rooms">
+                                <div class="wrap-box">
+                                    <div class="box-img">
+                                        <img src="http://theloungehotel.com/{{room.Image[0].Name}}" class="img-responsive" alt="{{room.RCatID}}"
+                                            title="{{room.Category}}">
+                                    </div>
+                                    <div class="rooms-content">
+                                        <h4 class="sky-h4">{{room.RCatID}}</h4>
+                                        <p style="font-color:#919191">{{room.RSCatID}}</p>
+                                        <p class="price">{{room.Rent}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                <div class="wrap-box">
+                                    <div class="box-img">
+                                        <img src="assets/images/Home-1/our-2.jpg" class="img-responsive" alt="Double Room"
+                                            title="Double Room">
+                                    </div>
+                                    <div class="rooms-content">
+                                        <h4 class="sky-h4">Double Room</h4>
+                                        <p class="price">$320 / Per Night</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                <div class="wrap-box">
+                                    <div class="box-img">
+                                        <img src="assets/images/Home-1/our-3.jpg" class="img-responsive" alt="Family Room"
+                                            title="Family Room">
+                                    </div>
+                                    <div class="rooms-content">
+                                        <h4 class="sky-h4">Family Room</h4>
+                                        <p class="price">$320 / Per Night</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                <div class="wrap-box">
+                                    <div class="box-img">
+                                        <img src="assets/images/Home-1/our-4.jpg" class="img-responsive" alt="Deluxe Room"
+                                            title="Deluxe Room">
+                                    </div>
+                                    <div class="rooms-content">
+                                        <h4 class="sky-h4">Deluxe Room</h4>
+                                        <p class="price">$320 / Per Night</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                <div class="wrap-box">
+                                    <div class="box-img">
+                                        <img src="assets/images/Home-1/our-5.jpg" class="img-responsive" alt="Single Room"
+                                            title="Single Room">
+                                    </div>
+                                    <div class="rooms-content">
+                                        <h4 class="sky-h4">Single Room</h4>
+                                        <p class="price">$320 / Per Night</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                <div class="wrap-box">
+                                    <div class="box-img">
+                                        <img src="assets/images/Home-1/our-6.jpg" class="img-responsive" alt="Presidential Room"
+                                            title="Presidential Room">
+                                    </div>
+                                    <div class="rooms-content">
+                                        <h4 class="sky-h4">Presidential Room</h4>
+                                        <p class="price">$320 / Per Night</p>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <!-- <div class="item ">
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
                                 <div class="wrap-box">
                                     <div class="box-img">
@@ -466,84 +542,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item ">
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                                <div class="wrap-box">
-                                    <div class="box-img">
-                                        <img src="assets/images/Home-1/our-1.jpg" class="img-responsive" alt="PLuxury Room"
-                                            title="Luxury Room">
-                                    </div>
-                                    <div class="rooms-content">
-                                        <h4 class="sky-h4">Luxury Room</h4>
-                                        <p class="price">$320 / Per Night</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                                <div class="wrap-box">
-                                    <div class="box-img">
-                                        <img src="assets/images/Home-1/our-2.jpg" class="img-responsive" alt="Double Room"
-                                            title="Double Room">
-                                    </div>
-                                    <div class="rooms-content">
-                                        <h4 class="sky-h4">Double Room</h4>
-                                        <p class="price">$320 / Per Night</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                                <div class="wrap-box">
-                                    <div class="box-img">
-                                        <img src="assets/images/Home-1/our-3.jpg" class="img-responsive" alt="Family Room"
-                                            title="Family Room">
-                                    </div>
-                                    <div class="rooms-content">
-                                        <h4 class="sky-h4">Family Room</h4>
-                                        <p class="price">$320 / Per Night</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                                <div class="wrap-box">
-                                    <div class="box-img">
-                                        <img src="assets/images/Home-1/our-4.jpg" class="img-responsive" alt="Deluxe Room"
-                                            title="Deluxe Room">
-                                    </div>
-                                    <div class="rooms-content">
-                                        <h4 class="sky-h4">Deluxe Room</h4>
-                                        <p class="price">$320 / Per Night</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                                <div class="wrap-box">
-                                    <div class="box-img">
-                                        <img src="assets/images/Home-1/our-5.jpg" class="img-responsive" alt="Single Room"
-                                            title="Single Room">
-                                    </div>
-                                    <div class="rooms-content">
-                                        <h4 class="sky-h4">Single Room</h4>
-                                        <p class="price">$320 / Per Night</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                                <div class="wrap-box">
-                                    <div class="box-img">
-                                        <img src="assets/images/Home-1/our-6.jpg" class="img-responsive" alt="Presidential Room"
-                                            title="Presidential Room">
-                                    </div>
-                                    <div class="rooms-content">
-                                        <h4 class="sky-h4">Presidential Room</h4>
-                                        <p class="price">$320 / Per Night</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
+
+
         </div>
         <!-- /container -->
     </section>
@@ -767,7 +771,7 @@
     <!--OUR-NEWS-->
     <section class="news">
         <div class="container">
-            <h2 class="new-title">News</h2>
+            <!-- <h2 class="new-title">News</h2>
             <div class="line"></div>
             <div class="row">
                 <div class="news-content">
@@ -811,22 +815,25 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- END / OUR NEWS -->
+
+
+    
     <!-- OUR-GALLERY-->
     <section class="gallery-our">
         <div class="container-fluid">
             <div class="gallery">
                 <h2 class="title-gallery">Our Gallery</h2>
                 <div class="outline"></div>
-                <ul class="nav nav-tabs text-uppercase">
+                <!-- <ul class="nav nav-tabs text-uppercase">
                     <li class="active"><a data-toggle="tab" href="#Hotel">Hotel & Ground</a></li>
                     <li><a data-toggle="tab" href="#menu1">Room/Suite </a></li>
                     <li><a data-toggle="tab" href="#menu2">Bathroom</a></li>
                     <li><a data-toggle="tab" href="#menu3">Dining</a></li>
-                </ul>
+                </ul> -->
                 <br />
                 <div class="tab-content">
                     <div id="Hotel" class="tab-pane fade in active">
@@ -1201,41 +1208,33 @@
                     <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1  ">
                         <div class="list-content">
                             <ul>
-                                <li><a href="attractions.html" title="">Site Map</a></li>
-                                <li><a href="tems_condition_1.html" title="">Term & Conditions</a></li>
-                                <li><a href="#" title="">Privacy Policy</a></li>
-                                <li><a href="#" title="">Help</a></li>
-                                <li><a href="#" title="">Affiliate</a></li>
+                                <li><a href="" title="">About Us</a></li>
+                                <li><a href="" title="">Restaurant</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 ">
                         <div class="list-content ">
                             <ul>
-                                <li><a href="#" title="">Our Location</a></li>
-                                <li><a href="#" title="">Career</a></li>
-                                <li><a href="about.html" title="">About Us</a></li>
-                                <li><a href="contact.html" title="">Contact Us</a></li>
+                                <li><a href="" title="">Our Location</a></li>
+                                <li><a href="" title="">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1">
                         <div class="list-content ">
                             <ul>
-                                <li><a href="#" title="">FAQS</a></li>
-                                <li><a href="#" title="">News</a></li>
-                                <li><a href="gallery_1.html" title="">Photo & Video</a></li>
-                                <li><a href="restaurant_1.html" title="">Restaurant</a></li>
-                                <li><a href="#" title="">Gift Card</a></li>
+                                <li><a href="" title="">News</a></li>
+                                <li><a href="" title="">Photo & Video</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding">
+                    <!-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding">
                         Copyright © 2017 by <a href="#" title="">EngoTheme.</a> SkyLine Hotel Theme crafted with love
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding">
+                    </div> -->
+                    <!-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding">
                         <div class="payments text-right">
                             <ul>
                                 <li>
@@ -1252,7 +1251,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
