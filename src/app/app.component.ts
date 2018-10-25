@@ -21,7 +21,7 @@ export class AppComponent {
 
   constructor(private roomSvc : RoomsService, private catSvc : CategoryService,private fb: FormBuilder,) { }
 
-  title = 'motel';
+  title = 'The Lounge Hotel';
   ngOnInit() {
 
     this.catSvc.getAllCategories().subscribe(x=>{this.categories=x;console.log(this.categories)})

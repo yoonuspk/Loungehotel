@@ -91,7 +91,7 @@
     color: rgba(223,190,106,0.7);
     border-radius: 0;
     padding: 18px 80px 20px;
-    transition: all 0.7s ease-out;
+    transition: all 0.3s ease-out;
     background-image: linear-gradient(to right, #2b5876 0%, #4e4376 51%, #2b5876 100%);
   
     background-position: 1% 50%;
@@ -104,7 +104,7 @@
   
   .btn:hover {
     color: #fff;
-    border: 3px solid rgba(223,190,106,0);
+    border: 2px solid rgba(223,190,106,0);
     color: #fff;
     background-position: right center;
   }
