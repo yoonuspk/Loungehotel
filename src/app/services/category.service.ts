@@ -2,23 +2,27 @@ import { Injectable } from "@angular/core";
 import { Http, Response, Headers} from '@angular/http';
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
-
 /**
  * @description
  * @class
  */
 @Injectable()
-export class RoomsService {
+export class CategoryService {
+
 
   constructor(
-    private _http: Http) {
-    
-  }
+    private _http: Http) {}
 
-  public getAllRooms() {
-    return this._http.get(`http://theloungehotel.com/api/rooms.php`, { headers: this.getHeaders(true)})
+  public getAllCategories() {
+    return this._http.get(`http://theloungehotel.com/api/category.php`, { headers: this.getHeaders(true)})
                      .pipe(map(res=>res.json()));
           }
+
+  public getAllSubCategories() {
+    return this._http.get(`http://theloungehotel.com/api/subcategory.php`, { headers: this.getHeaders(true)})
+                     .pipe(map(res=>res.json()));
+          }
+  
   
 
   public getHeaders(read:boolean){

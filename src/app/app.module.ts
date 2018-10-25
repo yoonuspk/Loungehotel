@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpModule, Http } from '@angular/http';
 import { RoomsService } from './services/rooms.service';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { RoomsService } from './services/rooms.service';
   
 
   ],
-  providers: [RoomsService],
+  providers: [RoomsService,CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
