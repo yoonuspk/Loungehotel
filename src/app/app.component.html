@@ -252,12 +252,16 @@
             </div>
           </div>
         <div class="check-avail">
+                <form [formGroup]="bform">
             <div class="container">
                 <div class="arrival date-title ">
                     <label>Arrival Date </label>
                     <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy">
                         <input class="form-control" type="text">
-                        <span class="input-group-addon"><img src="assets/images/Home-1/date-icon.png" alt="#"></span>
+                        <span class="input-group-addon">
+                                <p-calendar pDroppable="dd" (onDrop)="dropDate($event)" showButtonBar="true" formControlName="ReceiptDateTime" [showIcon]="true" showTime="true" ></p-calendar>
+                                <p-calendar formControlName="Date" dateFormat="dd/mm/yy" placeholder="DD/MM/YYYY"></p-calendar>
+                        </span>
                     </div>
                 </div>
                 <div class="departure date-title ">
@@ -305,7 +309,9 @@
                         <br>Availability
                     </div>
                 </div>
+            
             </div>
+        </form>
         </div>
     </section>
     <!-- END / SLIDER -->
