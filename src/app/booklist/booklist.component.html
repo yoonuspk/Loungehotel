@@ -1,7 +1,7 @@
 <!--component html goes here -->
 <div class="modal-dialog modal-lg" draggable="true">
 
-    <div class="modal-content" style="height:450px;overflow: auto">
+    <div class="modal-content" style="overflow: auto">
   
         <div class="modal-title">Book Rooms</div>
           <div class="center">
@@ -9,12 +9,11 @@
           </div>
         <div class="outline"></div>
       <form [formGroup]="bookform" (ngSubmit)="submit()">
-      <div class="modal-body" style="border:1px;padding-top: 25px">
+      <div class="modal-body" style="border:1px;">
           <div class="form-group">
-
                 <div class="row" style="padding-top: 25px">
                   <div class="col-md-3">
-                        <label>Start Date:
+                        <label>Check-in:
                           <sup>*</sup>
                         </label>
                   </div>
@@ -22,7 +21,7 @@
                        <input type="date" formControlName="StartDate">
                   </div>
                   <div class="col-md-3">
-                        <label>End Date:
+                        <label>Check-out:
                           <sup>*</sup>
                         </label>
                   </div>
@@ -72,7 +71,7 @@
                   </div>
                   <div class="col-md-3">  
                             <!-- <label for="category">Category</label> -->
-                          <select id="subcategory" formControlName="RSCatID">
+                          <select id="subcategory" formControlName="RSCatID" (click)="checkrent()">
                               <option value="1">Single Non-AC</option>
                               <option value="2">Double Non-AC</option>
                               <option value="3">Single AC</option>
@@ -103,27 +102,15 @@
                 <div class="row" style="padding-top: 25px" >
                   <div class="col-md-3">
                           <label >Rent Per Day:
-                            
                           </label>
                   </div>
                   <div class="col-md-1" >
-                    <!-- <label> {{this.room[0].Rent}}</label> -->
-                    <button (click)="checkrent()"></button>
-              </div>
+                    <i class="fa fa-refresh" (click)="checkrent()" aria-hidden="true"></i>
+                  </div>
                   <div class="col-md-2" *ngIf="this.room">
                         <label> {{this.room[0].Rent}}</label>
-                        <!-- <button (click)="checkrent()"></button> -->
                   </div>
-                  <!-- <div class="col-md-3">
-                          <label >Email:
-                            <sup>*</sup>
-                          </label>
-                  </div>
-                  <div class="col-md-3">  
-                          <input type="text" formControlName="Email">
-                  </div> -->
                 </div>
-                     
           </div>
       </div>
 
