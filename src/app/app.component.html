@@ -148,6 +148,7 @@
     </header>
     <!-- END-HEADER -->
     <!-- SLIDER -->
+    
     <section class="section-slider height-v">
         <!-- <div id="index12" class="owl-carousel  owl-theme">
             <div class="item">
@@ -320,8 +321,8 @@
         <div class="container">
             <h2 class="title-room">Our Rooms</h2>
             <div class="outline"></div>
-            <p class="rooms-p">When you host a party or family reunion, the special celebrations let you streng then
-                bonds with</p>
+            <!-- <p class="rooms-p">When you host a party or family reunion, the special celebrations let you streng then
+                bonds with</p> -->
 
             <div class="wrap-rooms">
                 <div class="row">
@@ -330,13 +331,13 @@
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let room of this.rooms">
                                 <div class="wrap-box">
                                     <div class="box-img">
-                                        <img src="http://theloungehotel.com/{{room.Image[0].Name}}" class="img-responsive" alt="{{room.RCatID}}"
-                                            title="{{room.Category}}">
+                                        <img src="http://theloungehotel.com/{{room.Image[0].Name}}" class="img-responsive" alt="{{getCatName(room.RCatID, this.categories)}}"
+                                            title="{{getCatName(room.RCatID, this.categories)}}">
                                     </div>
                                     <div class="rooms-content">
-                                        <h4 class="sky-h4">{{room.RCatID}}</h4>
-                                        <p style="font-color:#919191">{{room.RSCatID}}</p>
-                                        <p class="price">{{room.Rent}}</p>
+                                        <h4 class="sky-h4">{{getCatName(room.RCatID, this.categories)}}</h4>
+                                        <p style="color:#919191">{{getSubCatName(room.RSCatID, this.subcategories)}}</p>
+                                        <p class="price">₹ {{room.Rent}}</p>
                                     </div>
                                 </div>
                             </div>

@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookingService } from './services/booking.service';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   
 
   ],
-  providers: [RoomsService,BookingService],
+  providers: [RoomsService,CategoryService,BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
