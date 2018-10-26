@@ -13,13 +13,23 @@ import { HomeComponent } from './home/home.component';
 import { DialogService, BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { BooklistComponent } from './booklist/booklist.component';
 import { DialogModule } from 'primeng/dialog';
+import { AppRoutingModule } from './app-routing.module';
+import { AboutComponent } from './aboutus/about.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { ContactusComponent } from './contactus/contactus.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BooklistComponent
+    BooklistComponent,
+    AboutComponent,
+    GalleryComponent,
+    RoomsComponent,
+    ContactusComponent
   ],
   imports: [
+    AppRoutingModule,
     BootstrapModalModule.forRoot({container:document.body}),
     BrowserModule,
     HttpModule,
@@ -29,6 +39,7 @@ import { DialogModule } from 'primeng/dialog';
     BrowserModule,
     BrowserAnimationsModule,
     DialogModule,
+
     // DialogModule
   
 

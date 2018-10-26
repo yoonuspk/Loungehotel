@@ -4,6 +4,7 @@ import { RoomType, Room } from './domains/rooms';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CategoryService } from './services/category.service';
 import { Category, SubCategory } from './domains/category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent {
   categories: Category[];
   subcategories: SubCategory[];
 
-  constructor(private roomSvc : RoomsService, private catSvc : CategoryService,private fb: FormBuilder,) { }
+  constructor(private roomSvc : RoomsService, private catSvc : CategoryService,private fb: FormBuilder,
+              private router:Router) { }
 
   title = 'The Lounge Hotel';
   ngOnInit() {
@@ -44,5 +46,10 @@ export class AppComponent {
   
   getSubCatName(id, cat){
     return cat[id-1].SCatName;
+  }
+
+  Aboutus(){
+    console.log("hella");
+    this.router.navigate(['/aboutus']);
   }
 }

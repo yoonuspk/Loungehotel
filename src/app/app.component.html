@@ -1,8 +1,9 @@
+
 <html>
 
 <body>
     <!-- HEADER -->
-    <header class="header-sky">
+    <header class="header-sky"  style="background:black">
         <div class="container">
             <!--HEADER-TOP-->
             <div class="header-top">
@@ -38,8 +39,8 @@
         </div>
         <!-- MENU-HEADER -->
         <div class="menu-header">
-            <nav class="navbar navbar-fixed-top">
-                <div class="container">
+            <nav class="navbar navbar-fixed-top"  style="background:rgba(0, 0, 0, 0.404)">
+                <div class="container"  > 
                     <div class="navbar-header ">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -140,10 +141,10 @@
                                 </ul>
                             </li> -->
                             <li><a href="" title="About">HOME</a></li>
-                            <li><a href="" title="Contact">ROOMS</a></li>
-                            <li><a href="" title="About">GALLERY</a></li>
-                            <li><a href="" title="About">ABOUT US</a></li>
-                            <li><a href="" title="Contact">CONTACT US</a></li>
+                            <li><a href="" title="Rooms" routerLink="/room">ROOMS</a></li>
+                            <li><a href="" title="Gallery" routerLink="/gallery">GALLERY</a></li>
+                            <li><a href="" title="About"  routerLink="/aboutus" >ABOUT US</a></li>
+                            <li><a href="" title="Contact" routerLink="/contactus">CONTACT US</a></li>
                         </ul>
                     </div>
                 </div>
@@ -154,7 +155,7 @@
     <!-- END-HEADER -->
     <!-- SLIDER -->
     
-    <app-home></app-home>
+   <router-outlet></router-outlet>
     <!--FOOTER-->
     <footer class="footer-sky">
         <div class="footer-top">
