@@ -4,7 +4,8 @@ import { CategoryService } from "../services/category.service";
 import { RoomsService } from "../services/rooms.service";
 import { Room } from "../domains/rooms";
 import { Category, SubCategory } from "../domains/category";
-
+import { BooklistComponent } from "../booklist/booklist.component";
+import { DialogService } from "ng2-bootstrap-modal";
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -18,7 +19,9 @@ export class HomeComponent implements OnInit {
   date1: Date;
   categories: Category[];
   subcategories: SubCategory[];
-  constructor(private roomSvc : RoomsService, private catSvc : CategoryService,private fb: FormBuilder) { 
+  constructor(private roomSvc : RoomsService,
+    private _dialogSvc:DialogService,
+     private catSvc : CategoryService,private fb: FormBuilder) { 
 
   }
 
@@ -45,4 +48,19 @@ export class HomeComponent implements OnInit {
   getSubCatName(id, cat){
     return cat[id-1].SCatName;
   }
+
+  roombook(){
+    console.log("hello");
+    let disposable = this._dialogSvc
+                .addDialog(BooklistComponent, {}) 
+                .subscribe((editedIncome)=> {
+                    if(editedIncome){
+                        console.log(editedIncome);
+                        // let i = this.inc.indexOf(selectedInc);
+                        // this.inc[i]=editedIncome; //sync the changes back to data model
+                        // this.populateTable(this.inc); //refresh data table
+                    }
+                });
+        }
+  
 }
