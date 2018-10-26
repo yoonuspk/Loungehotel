@@ -42,7 +42,8 @@ export class BooklistComponent extends DialogComponent<bookArg,any> implements b
         console.log(x)});
         
   }
-  private prepareSaveCustomer():Booking {
+  
+   prepareSaveCustomer():Booking {
     console.log(this.bookform.value);
     const formModel = this.bookform.value;
       const savebooking: Booking = {
@@ -55,10 +56,6 @@ export class BooklistComponent extends DialogComponent<bookArg,any> implements b
       }
     console.log(savebooking);
     return savebooking;
-  }
-
-  close(){
-    this.close();
   }
   
 }

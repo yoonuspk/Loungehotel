@@ -1,105 +1,98 @@
 <!--component html goes here -->
 <div class="modal-dialog modal-lg" draggable="true">
+
     <div class="modal-content">
   
-        <h4 class="modal-title">Book Rooms</h4>
-        <button type="button" class="close" (click)="close()">&times;</button>
-        <!-- <dlgheader [title]="'Capture Receipt'" [parentDialog]="this" [frmgrp]="rform" ></dlgheader> -->
+        <div class="modal-title">Book Rooms</div>
+          <div class="center">
+              <img src="../../assets/images/Home-1/icon-our.png">
+          </div>
+        <div class="outline"></div>
       <form [formGroup]="bookform" (ngSubmit)="submit()">
-        <div class="modal-body" style="border:1px">
+      <div class="modal-body" style="border:1px;padding-top: 25px">
           <div class="form-group">
-            <table cellpadding="5px"  width="100%" border="0"  style="padding-left: 10px;">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <tr>
-                      <td width="30%">
-                        <label >Start Date:
+
+                <div class="row" style="padding-top: 25px">
+                  <div class="col-md-3">
+                        <label>Start Date:
                           <sup>*</sup>
                         </label>
-                      </td>
-                      <td width="70%">
+                  </div>
+                  <div class="col-md-3">      
                        <input type="date" formControlName="StartDate">
-                      </td>
-                    </tr>
-                    <tr>
-                        <td width="30%">
-                          <label >End Date:
-                            <sup>*</sup>
-                          </label>
-                        </td>
-                        <td width="70%">
+                  </div>
+                  <div class="col-md-3">
+                        <label>End Date:
+                          <sup>*</sup>
+                        </label>
+                  </div>
+                  <div class="col-md-3">     
                          <input type="date" formControlName="EndDate">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="30%">
+                  </div>
+                </div>
+
+                <div class="row" style="padding-top: 25px">
+                    <div class="col-md-3">
                           <label >Adults
                             <sup>*</sup>
                           </label>
-                        </td>
-                        <td width="70%">
+                  </div>
+                  <div class="col-md-3">     
                          <input type="number" formControlName="Days">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="30%">
+                  </div>
+                  <div class="col-md-3">
                           <label >Childrens:
                             <sup>*</sup>
                           </label>
-                        </td>
-                        <td width="70%">
+                  </div>
+                  <div class="col-md-3">
                          <input type="number">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="30%">
+                  </div>
+                </div>
+                
+                <div class="row" style="padding-top: 25px">
+                  <div class="col-md-3">
                           <label >Room Category:
                             <sup>*</sup>
                           </label>
-                        </td>
-                        <td width="70%">
+                  </div>
+                  <div class="col-md-3">
                             <!-- <label for="category">Category</label> -->
-                            <select id="category" > 
-                                <option value="1">Standard</option>
-                                <option value="2">Sharing Bathrooms</option>
-                                <option value="3">Deluxe</option>
-                                <option value="4">Deluxe Triple</option>
-                            </select>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="30%">
+                          <select id="category" > 
+                              <option value="1">Standard</option>
+                              <option value="2">Sharing Bathrooms</option>
+                              <option value="3">Deluxe</option>
+                              <option value="4">Deluxe Triple</option>
+                          </select>
+                  </div>
+                  <div class="col-md-3">
                           <label >Room subcategory:
                             <sup>*</sup>
                           </label>
-                        </td>
-                        <td width="70%">
+                  </div>
+                  <div class="col-md-3">  
                             <!-- <label for="category">Category</label> -->
-                            <select id="subcategory" >
-                                <option value="1">Single Non-AC</option>
-                                <option value="2">Double Non-AC</option>
-                                <option value="3">Single AC</option>
-                                <option value="4">Double AC</option>
-                                <option value="5">Triple AC</option>
-                                <option value="6">Extra Bed on Request</option>
-                            </select>
-                        </td>
-                      </tr>
-                     
-                  
+                          <select id="subcategory" >
+                              <option value="1">Single Non-AC</option>
+                              <option value="2">Double Non-AC</option>
+                              <option value="3">Single AC</option>
+                              <option value="4">Double AC</option>
+                              <option value="5">Triple AC</option>
+                              <option value="6">Extra Bed on Request</option>
+                          </select>
                   </div>
                 </div>
-              </div>
-            </table>
+                     
           </div>
-          <div class="modal-footer">
-            <!-- <p-button style="font-size: 15px" type="submit"  [class.disabled]="isClickedOnce" (click)="isClickedOnce = true"
-              icon="fa fa-floppy-o" label="Save"  ></p-button>&nbsp; -->
-            <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
-          </div>
+      </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="read-more">Submit</button>
+          &nbsp;
+          <button type="button" class="read-more" (click)="this.close()">Close</button>
         </div>
-        <!-- <dlgfooter [parentDialog]="this" [frmgrp]="rform" ></dlgfooter> -->
+
       </form>
+
     </div>
   </div>
