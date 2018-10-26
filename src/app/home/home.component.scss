@@ -99,12 +99,12 @@
     text-decoration: none;
     margin: 0.625rem;
     border: none;
-    border: 1px solid rgba(223,190,106,0.3);
+    border: 2px solid rgb(255, 255, 255);
   }
   
   .btn:hover {
     color: #fff;
-    border: 2px solid rgba(223,190,106,0);
+    border: 2px solid rgba(255, 255, 255, 0.555);
     color: #fff;
     background-position: right center;
   }
