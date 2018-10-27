@@ -5,7 +5,7 @@
   
         <div class="modal-title">Book Rooms</div>
           <div class="center">
-              <img src="../../assets/images/Home-1/icon-our.png">
+            <img src="../../assets/images/Home-1/icon-our.png">
           </div>
         <div class="outline"></div>
       <form [formGroup]="bookform" (ngSubmit)="submit()">
@@ -99,13 +99,13 @@
                           <input type="text" formControlName="Email">
                   </div>
                 </div>
-                <div class="row" style="padding-top: 25px" >
+                <div class="row" style="padding-top: 25px" *ngIf="this.room">
                   <div class="col-md-3">
                           <label >Rent Per Day:
                           </label>
                   </div>
                   <div class="col-md-1" >
-                    <i class="fa fa-refresh" (click)="checkrent()" aria-hidden="true"></i>
+                    <!-- <i class="fa fa-refresh" (click)="checkrent()" aria-hidden="true"></i> -->
                   </div>
                   <div class="col-md-2" *ngIf="this.room">
                         <label> {{this.room[0].Rent}}</label>

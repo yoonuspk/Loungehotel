@@ -25,6 +25,7 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
   user: User;
   rooms: Room[];
   room: Room[];
+  roomchecked: boolean=false;
 
   constructor(private _dialogSvc: DialogService,
     private fb: FormBuilder,
@@ -35,7 +36,7 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
   }
 
   ngOnInit() {
-    this.bookingSvc.getAllRooms().subscribe(x => { console.log(x) });
+    // this.bookingSvc.getAllRooms().subscribe(x => { console.log(x) });
     this.bookform = this.fb.group({
       BID: [''],
       UID: [''],
@@ -76,9 +77,10 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
             this.userS.getAllCustomers().subscribe(x => {
               userCount = x.length;
               usr = x; this.user = usr[userCount - 1];
-              console.log(this.user);
+              // console.log(this.user);
               this.roomS.getAllRooms().subscribe(x => {
               this.rooms = x;
+              this.roomchecked=true;
                 this.room = this.rooms.filter(x => x.RCatID == this.bookform.value.RCatID && x.RSCatID == this.bookform.value.RSCatID);
                 // console.log(this.room[0].RID);
                 this.bookingSvc.bookrooms(this.prepareSaveCustomer()).subscribe(x =>
@@ -101,7 +103,7 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
   prepareSaveCustomer(): Booking {
     console.log(this.bookform.value);
     const formModel = this.bookform.value;
-    if(this.room){
+    if(this.roomchecked){
     const savebooking: Booking = {
       BID: null,
       UID: this.user.UserID,
