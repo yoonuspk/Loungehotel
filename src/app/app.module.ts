@@ -19,6 +19,10 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { UserService } from './services/user.service';
+
+import {CalendarModule} from 'primeng/calendar';
+import { MyDatePickerModule } from 'mydatepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +44,8 @@ import { UserService } from './services/user.service';
     BrowserModule,
     BrowserAnimationsModule,
     DialogModule,
+    CalendarModule,
+    MyDatePickerModule
 
     // DialogModule
   

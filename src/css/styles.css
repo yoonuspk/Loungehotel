@@ -5792,7 +5792,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 .header-sky {
-  /* position: fixed; */
+  position: fixed;
   z-index: 999;
   right: 0;
   left: 0;

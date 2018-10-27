@@ -7,11 +7,15 @@ import { UserService } from "../services/user.service";
 import { User } from "../domains/user";
 import { RoomsService } from "../services/rooms.service";
 import { Room } from "../domains/rooms";
+import {IMyDpOptions, IMyDateModel} from 'mydatepicker';
 
 export interface bookArg {
   // selectedIncome:Income;
   // IncomeID:number;
 }
+
+
+
 
 @Component({
   selector: "app-booklist",
@@ -26,6 +30,30 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
   rooms: Room[];
   room: Room[];
   roomchecked: boolean=false;
+
+  myDatePickerOptions: IMyDpOptions = {
+    selectorHeight:"220px",
+    selectorWidth:"95%",
+    showIncreaseDateBtn: true,
+    todayBtnTxt: 'Today',
+    dateFormat: 'yyyy-mm-dd',
+    firstDayOfWeek: 'mo',
+    sunHighlight: true,
+    inline: false,
+    disableUntil: {year: 2016, month: 8, day: 10}
+  };
+
+  // myDatePickerOptionss: IMyDpOptions = {
+  //   selectorHeight : '50px',
+  //   todayBtnTxt: 'Today',
+  //   dateFormat: 'yyyy-mm-dd',
+  //   firstDayOfWeek: 'mo',
+  //   sunHighlight: true,
+  //   inline: false,
+  //   disableUntil: {year: 2016, month: 8, day: 10}
+  // };
+
+
 
   constructor(private _dialogSvc: DialogService,
     private fb: FormBuilder,
