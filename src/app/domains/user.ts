@@ -1,5 +1,5 @@
 export interface User {
-    Name: string;
+    Name:string;
     Email: string;
     Address: string;
     City: string;
@@ -9,4 +9,5 @@ export interface User {
     UserName: string;
     Password: string;
     Role: string;
+    Mobile:number;
 }

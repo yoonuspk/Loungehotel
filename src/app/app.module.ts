@@ -18,6 +18,7 @@ import { AboutComponent } from './aboutus/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { UserService } from './services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import { ContactusComponent } from './contactus/contactus.component';
   
 
   ],
-  providers: [RoomsService,CategoryService,BookingService],
+  providers: [RoomsService,CategoryService,BookingService,UserService],
   entryComponents:[BooklistComponent],
   bootstrap: [AppComponent]
 })

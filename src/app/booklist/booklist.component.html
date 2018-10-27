@@ -58,7 +58,7 @@
                   </div>
                   <div class="col-md-3">
                             <!-- <label for="category">Category</label> -->
-                          <select id="category" > 
+                          <select id="category" formControlName="RCatID"> 
                               <option value="1">Standard</option>
                               <option value="2">Sharing Bathrooms</option>
                               <option value="3">Deluxe</option>
@@ -72,7 +72,7 @@
                   </div>
                   <div class="col-md-3">  
                             <!-- <label for="category">Category</label> -->
-                          <select id="subcategory" >
+                          <select id="subcategory" formControlName="RSCatID">
                               <option value="1">Single Non-AC</option>
                               <option value="2">Double Non-AC</option>
                               <option value="3">Single AC</option>
@@ -81,6 +81,47 @@
                               <option value="6">Extra Bed on Request</option>
                           </select>
                   </div>
+                </div>
+                <div class="row" style="padding-top: 25px">
+                  <div class="col-md-3">
+                          <label >Mobile number
+                            <sup>*</sup>
+                          </label>
+                  </div>
+                  <div class="col-md-3">
+                        <input type="number" formControlName="Mobile">
+                  </div>
+                  <div class="col-md-3">
+                          <label >Email:
+                            <sup>*</sup>
+                          </label>
+                  </div>
+                  <div class="col-md-3">  
+                          <input type="text" formControlName="Email">
+                  </div>
+                </div>
+                <div class="row" style="padding-top: 25px" >
+                  <div class="col-md-3">
+                          <label >Rent Per Day:
+                            
+                          </label>
+                  </div>
+                  <div class="col-md-1" >
+                    <!-- <label> {{this.room[0].Rent}}</label> -->
+                    <button (click)="checkrent()"></button>
+              </div>
+                  <div class="col-md-2" *ngIf="this.room">
+                        <label> {{this.room[0].Rent}}</label>
+                        <!-- <button (click)="checkrent()"></button> -->
+                  </div>
+                  <!-- <div class="col-md-3">
+                          <label >Email:
+                            <sup>*</sup>
+                          </label>
+                  </div>
+                  <div class="col-md-3">  
+                          <input type="text" formControlName="Email">
+                  </div> -->
                 </div>
                      
           </div>
