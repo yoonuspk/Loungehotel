@@ -14,7 +14,7 @@
                         </label>
                     </div>
                     <div class="col-md-4">
-                        <input type="number" formControlName="Days" formControlName="Adults">
+                        <input type="text" formControlName="Days" formControlName="Adults">
                     </div>
                     <div class="col-md-2" style="padding-left: 40px">
                         <label>Email:
@@ -22,7 +22,7 @@
                         </label>
                     </div>
                     <div class="col-md-4">
-                        <input type="number" formControlName="Days" formControlName="Adults">
+                        <input type="text" formControlName="Days" formControlName="Adults">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 25px">
@@ -35,17 +35,35 @@
                         <input type="number" formControlName="Days" formControlName="Adults">
                     </div>
                     <div class="col-md-2" style="padding-left: 40px">
-                        <label>Place:
+                        <label>Address:
                             <sup>*</sup>
                         </label>
                     </div>
                     <div class="col-md-4">
-                        <input type="number" formControlName="Childrens">
+                        <input type="text" formControlName="Childrens">
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 25px">
+                    <div class="col-md-2" style="padding-left: 40px">
+                        <label>City:
+                            <sup>*</sup>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="number" formControlName="Days" formControlName="Adults">
+                    </div>
+                    <div class="col-md-2" style="padding-left: 40px">
+                        <label>State:
+                            <sup>*</sup>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" formControlName="Childrens">
                     </div>
                 </div>
             </div>
             <div class="center" style="margin-top:0%">
-                <button type="submit" class="read-more">Submit</button>
+                <button type="submit" class="read-more">Book</button>
                 &nbsp;
                 <button type="button" class="read-more" (click)="this.close()">Close</button>
             </div>

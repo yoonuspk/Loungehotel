@@ -1,0 +1,45 @@
+ .read-more {
+     margin: auto;
+     padding: 0 0 0 0;
+    width: 130px;
+    height: 30px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 30px;
+    border: 1px solid #000000;
+    letter-spacing: 2px;
+    outline: none;
+    background: transparent;
+}
+
+ .read-more:hover {
+        color: #ffffff;
+        text-shadow: none;
+        background: #8e7037;
+        border: 1px solid #8e7037;
+    }
+
+    .read-more:focus {
+        color: #FFF;
+        background: #8e7037;
+        outline: none;
+        border: 1px solid #8e7037; 
+    }
+
+    
+    .center {
+        margin: auto;
+        text-align: center;
+    }
+
+    // .book{
+    //     font-family: 'Courier New', Courier, monospace;
+    //     border: 1px solid rgb(75, 74, 74);
+    //     padding: 2px 2px 2px 2px;
+    //     border-radius: 3px;
+    //     float: right;
+    //     font-size: 12px;
+    //     color: rgb(113, 116, 116);
+    // }

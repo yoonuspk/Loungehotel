@@ -37,6 +37,7 @@ export class RoomsComponent implements OnInit {
     return cat[id - 1].SCatName;
   }
 
+   
   booknow() {
     let disposable = this._dialogSvc
       .addDialog(BooknowComponent, {})

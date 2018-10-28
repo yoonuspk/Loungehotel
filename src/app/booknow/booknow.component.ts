@@ -34,6 +34,7 @@ export class BooknowComponent extends DialogComponent<bookArg, any> implements b
     });
 }
 submit(){
+  
 
 }
 }

@@ -15,11 +15,14 @@
                                         <img src="http://theloungehotel.com/{{room.Image[0].Name}}" class="img-responsive" alt="{{getCatName(room.RCatID, this.categories)}}"
                                             title="{{getCatName(room.RCatID, this.categories)}}">
                                     </div>
-                                    <div class="rooms-content">
+                                    <div class="rooms-content" >
                                         <h4 class="sky-h4" >{{getCatName(room.RCatID, this.categories)}}</h4>
                                         <p style="color:#919191">{{getSubCatName(room.RSCatID, this.subcategories)}}</p>
                                         <p class="price">₹ {{room.Rent}}</p>
-                                        <p class="button" (click)="booknow()">Book now</p>
+                                        <div class="center">
+                                            <button class="read-more" (click)="booknow()">Book Now</button>
+                                        </div>
+                                        <!-- <div class="book" >Available</div> -->
                                     </div>
                                 </div>
                             </div>
