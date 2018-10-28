@@ -94,7 +94,7 @@
             <div class="row">
                 <div id="rooms" class="owl-carousel owl-theme">
                     <div class="item">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let room of this.rooms">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let room of this.rooms | slice:0:6">
                             <div class="wrap-box">
                                 <div class="box-img">
                                     <img src="http://theloungehotel.com/{{room.Image[0].Name}}" class="img-responsive" alt="{{getCatName(room.RCatID, this.categories)}}"
@@ -438,13 +438,12 @@
             <div class="container">
                 <div id="testimonials" class="owl-carousel owl-theme">
                     <div class="item ">
-                        <div class="img-testimonials"><img src="assets/images/Home-1/about-testimonials-img.png" alt="#"></div>
-                        <p class="testimonials-p"><span>“</span>​‌ This is the only place to stay in Catalina! I
+                        <div class="img-testimonials"><img src="assets/images/About/about-3.png" alt="#"></div>
+                        <p class="testimonials-p"><span>“</span>​‌ This is the only place to stay in Bangalore! I
                             have stayed in the cheaper hotels and they were fine, but this is just the icing on the
                             cake! After spending the day bike riding and hiking to come back and enjoy a glass of
-                            wine while looking out your <span>​‌​‌”</span> ocean view window and then to top it all
-                            off...</p>
-                        <h5 class="sky-h5">JULIA ROSE</h5>
+                            wine while looking out your <span>​‌​‌”</span> </p>
+                        <h5 class="sky-h5">ADAM ROSE</h5>
                         <p class="testimonials-p1">From Los Angeles, California</p>
                     </div>
                     <!-- <div class="item">
