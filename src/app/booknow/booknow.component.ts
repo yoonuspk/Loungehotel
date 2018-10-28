@@ -62,6 +62,8 @@ submit(){
               this.roomchecked=true;
                 this.room = this.rooms.filter(x => x.RCatID == this.roomObj.RCatID && x.RSCatID == this.roomObj.RSCatID);
                 this.bookingSvc.bookrooms(this.prepareSaveCustomer()).subscribe(x =>  console.log(x))
+                window.alert("Booking Successfull");
+                this.close();
               })})
       }
                 
