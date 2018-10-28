@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     this.catSvc.getAllCategories().subscribe(x=>{this.categories=x;console.log(this.categories)})
     this.catSvc.getAllSubCategories().subscribe(x=>{this.subcategories=x;console.log(this.subcategories)})
     this.roomSvc.getAllRooms().subscribe(x=>{this.rooms=x;console.log(this.rooms)})
+    
     this.bform = this.fb.group({
       RID: [''],
       RCatID: [''],
