@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RoomsService } from './services/rooms.service';
-import { RoomType, Room } from './domains/rooms';
+import {
+   Room } from './domains/rooms';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CategoryService } from './services/category.service';
 import { Category, SubCategory } from './domains/category';

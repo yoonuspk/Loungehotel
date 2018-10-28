@@ -1,12 +1,3 @@
-export interface RoomType {
-    RID: number;
-    RCatID: number;
-    RSCatID: number;
-    Rent: number;
-    CapID: number;
-    RoomCount: number;
-}
-
 export interface Room {
     RID: number;
     RCatID: number;
