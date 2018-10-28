@@ -1,8 +1,8 @@
 
 
 export interface Booklist {
-StartDate: [''],
-EndDate: [''],
-Adults:[''],
-Childrens:['']
+StartDate: Date;
+EndDate: Date;
+Adults: number;
+Childrens: number;
 }

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RoomsService } from './services/rooms.service';
-import {
-   Room } from './domains/rooms';
+import {Room } from './domains/rooms';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CategoryService } from './services/category.service';
 import { Category, SubCategory } from './domains/category';
 import { Router } from '@angular/router';
+import { StorageService } from './services/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +22,8 @@ export class AppComponent {
   subcategories: SubCategory[];
 
   constructor(private roomSvc : RoomsService, private catSvc : CategoryService,private fb: FormBuilder,
-              private router:Router) { }
+    private router:Router,
+    private _Storage:StorageService) { }
 
   title = 'The Lounge Hotel';
   ngOnInit() {
@@ -50,7 +51,18 @@ export class AppComponent {
   }
 
   Aboutus(){
-    console.log("hella");
     this.router.navigate(['/aboutus']);
+  }
+
+          
+  clickRoom(){
+    var booklist=({
+      StartDate: null,
+      EndDate: null,
+      Adults: 0,
+      Childrens: 0,
+    })
+    this._Storage.setScope(booklist);
+    this.router.navigate(['/room']);
   }
 }
