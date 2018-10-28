@@ -11,10 +11,14 @@ export interface Room {
     RID: number;
     RCatID: number;
     RSCatID: number;
-    Rent: number;
     CapID: number;
-    RoomCount: number;
+    Rent:number;
+    Room_No: number;
     Image: Image[];
+    BookedYN: boolean;
+    childrens: number;
+    Adults: number;
+
 }
 
 export interface Image {

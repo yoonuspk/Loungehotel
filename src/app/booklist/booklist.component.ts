@@ -8,6 +8,7 @@ import { User } from "../domains/user";
 import { RoomsService } from "../services/rooms.service";
 import { Room } from "../domains/rooms";
 import {IMyDpOptions, IMyDateModel} from 'mydatepicker';
+import { Router } from "@angular/router";
 
 export interface bookArg {
   // selectedIncome:Income;
@@ -42,6 +43,7 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
     inline: false,
     disableUntil: {year: 2016, month: 8, day: 10}
   };
+  booklistform: FormGroup;
 
   // myDatePickerOptionss: IMyDpOptions = {
   //   selectorHeight : '50px',
@@ -59,7 +61,8 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
     private fb: FormBuilder,
     private bookingSvc: BookingService,
     private userS: UserService,
-    private roomS: RoomsService) {
+    private roomS: RoomsService,
+    private router:Router) {
     super(_dialogSvc);
   }
 
@@ -90,34 +93,46 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
       Role: [''],
       Mobile: ['']
     });
+    this.booklistform = this.fb.group({
+   
+      
+      StartDate: [''],
+      EndDate: [''],
+      Adults:[''],
+      Childrens:['']
+    });
   }
 
   submit() {
-    let userCount: number = 0;
-    let usr: User[];
-    console.log(this.bookform.value);
-    if (this.bookform.value.Mobile && this.bookform.value.Email) {
-      this.userS.getAllCustomers().subscribe(x => {
-        userCount = x.length;
-        this.userS.createCustomer(this.prepareSaveUser())
-          .subscribe(x => {
-            console.log(x);
-            this.userS.getAllCustomers().subscribe(x => {
-              userCount = x.length;
-              usr = x; this.user = usr[userCount - 1];
-              // console.log(this.user);
-              this.roomS.getAllRooms().subscribe(x => {
-              this.rooms = x;
-              this.roomchecked=true;
-                this.room = this.rooms.filter(x => x.RCatID == this.bookform.value.RCatID && x.RSCatID == this.bookform.value.RSCatID);
-                // console.log(this.room[0].RID);
-                this.bookingSvc.bookrooms(this.prepareSaveCustomer()).subscribe(x =>
-                  console.log(x))
-              });
-            })
-          })
-      })
-    }
+    console.log("In submit");
+    this.close();
+    this.router.navigate(['/room']);
+
+    // let userCount: number = 0;
+    // let usr: User[];
+    // console.log(this.bookform.value);
+    // if (this.bookform.value.Mobile && this.bookform.value.Email) {
+    //   this.userS.getAllCustomers().subscribe(x => {
+    //     userCount = x.length;
+    //     this.userS.createCustomer(this.prepareSaveUser())
+    //       .subscribe(x => {
+    //         console.log(x);
+    //         this.userS.getAllCustomers().subscribe(x => {
+    //           userCount = x.length;
+    //           usr = x; this.user = usr[userCount - 1];
+    //           // console.log(this.user);
+    //           this.roomS.getAllRooms().subscribe(x => {
+    //           this.rooms = x;
+    //           this.roomchecked=true;
+    //             this.room = this.rooms.filter(x => x.RCatID == this.bookform.value.RCatID && x.RSCatID == this.bookform.value.RSCatID);
+    //             // console.log(this.room[0].RID);
+    //             this.bookingSvc.bookrooms(this.prepareSaveCustomer()).subscribe(x =>
+    //               console.log(x))
+    //           });
+    //         })
+    //       })
+    //   })
+    // }
 
 
   }

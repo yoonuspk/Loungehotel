@@ -16,9 +16,10 @@
                                             title="{{getCatName(room.RCatID, this.categories)}}">
                                     </div>
                                     <div class="rooms-content">
-                                        <h4 class="sky-h4">{{getCatName(room.RCatID, this.categories)}}</h4>
+                                        <h4 class="sky-h4" >{{getCatName(room.RCatID, this.categories)}}</h4>
                                         <p style="color:#919191">{{getSubCatName(room.RSCatID, this.subcategories)}}</p>
                                         <p class="price">₹ {{room.Rent}}</p>
+                                        <p class="button" (click)="booknow()">Book now</p>
                                     </div>
                                 </div>
                             </div>

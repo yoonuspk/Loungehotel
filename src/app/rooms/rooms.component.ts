@@ -34,4 +34,8 @@ export class RoomsComponent implements OnInit {
   getSubCatName(id, cat){
     return cat[id-1].SCatName;
   }
+
+  booknow(){
+    
+  }
 }
