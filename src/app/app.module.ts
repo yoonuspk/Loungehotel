@@ -23,6 +23,7 @@ import { UserService } from './services/user.service';
 import {CalendarModule} from 'primeng/calendar';
 import { MyDatePickerModule } from 'mydatepicker';
 import { BooknowComponent } from './booknow/booknow.component';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { BooknowComponent } from './booknow/booknow.component';
   
 
   ],
-  providers: [RoomsService,CategoryService,BookingService,UserService],
+  providers: [RoomsService,CategoryService,BookingService,UserService,StorageService],
   entryComponents:[BooklistComponent,BooknowComponent],
   bootstrap: [AppComponent]
 })

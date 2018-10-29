@@ -5,6 +5,8 @@ import { RoomsService } from "../services/rooms.service";
 import { CategoryService } from "../services/category.service";
 import { DialogService } from "ng2-bootstrap-modal";
 import { BooknowComponent } from "../booknow/booknow.component";
+import { Booklist } from "../domains/booklist";
+import { StorageService } from "../services/storage.service";
 
 @Component({
   selector: "app-rooms",
@@ -17,13 +19,16 @@ export class RoomsComponent implements OnInit {
   rooms: Room[];
   categories: Category[];
   subcategories: SubCategory[];
+  booklist: Booklist;
   constructor(private roomSvc: RoomsService,
-    private catSvc: CategoryService, private _dialogSvc: DialogService) {
+    private catSvc: CategoryService, private _dialogSvc: DialogService,
+    private _StrS:StorageService) {
 
   }
 
   ngOnInit() {
-
+    this.booklist=<Booklist>(this._StrS.getScope());
+    console.log(this.booklist);
     this.catSvc.getAllCategories().subscribe(x => { this.categories = x; console.log(this.categories) })
     this.catSvc.getAllSubCategories().subscribe(x => { this.subcategories = x; console.log(this.subcategories) })
     this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x; console.log(this.rooms) })
