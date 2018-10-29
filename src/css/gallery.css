@@ -160,8 +160,6 @@
     text-align: center;
 }
 
-.lightbox-wrap .lightbox-title-over p {}
-
 .lightbox-wrap .lightbox-title p {
     display: inline-block;
     padding-right: 14px;
@@ -172,8 +170,7 @@
     color: #898989;
 }
 
-.lightbox-wrap .lightbox-title-inside {}
-
+ 
 .lightbox-wrap .lightbox-outer+.lightbox-title-inside {
     padding-top: 5px;
     padding-bottom: 0;
