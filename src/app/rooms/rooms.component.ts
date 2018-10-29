@@ -35,7 +35,7 @@ export class RoomsComponent implements OnInit {
       this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x; console.log(this.rooms); this.filteredArray = this.rooms;})
     }
     else{
-    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x; console.log(this.rooms); this.filteredArray = this.rooms.filter(x=>x.Adults <= this.booklist.Adults && x.childrens <= this.booklist.Childrens ); })
+    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x; console.log(this.rooms); this.filteredArray = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
     }
     this.catSvc.getAllCategories().subscribe(x => { this.categories = x; console.log(this.categories) })
     this.catSvc.getAllSubCategories().subscribe(x => { this.subcategories = x; console.log(this.subcategories) })

@@ -6,7 +6,7 @@ import { RoomsService } from './services/rooms.service';
 // import {CalendarModule} from 'primeng/calendar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookingService } from './services/booking.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryService } from './services/category.service';
 import { HomeComponent } from './home/home.component';
@@ -54,7 +54,8 @@ import { StorageService } from './services/storage.service';
   
 
   ],
-  providers: [RoomsService,CategoryService,BookingService,UserService,StorageService],
+  providers: [RoomsService,CategoryService,BookingService,UserService,StorageService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}],
   entryComponents:[BooklistComponent,BooknowComponent],
   bootstrap: [AppComponent]
 })
