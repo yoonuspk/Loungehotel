@@ -51,9 +51,10 @@ export class RoomsComponent implements OnInit {
 
 
    
-  booknow() {
+  booknow(room) {
+    console.log(room);
     let disposable = this._dialogSvc
-      .addDialog(BooknowComponent, {})
+      .addDialog(BooknowComponent, {roomObj:room})
       .subscribe((editedIncome) => {
         if (editedIncome) {
           console.log(editedIncome);

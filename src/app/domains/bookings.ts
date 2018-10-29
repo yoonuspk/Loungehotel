@@ -3,7 +3,7 @@
         BID: string;
         UID: string;
         RID: number;
-        Days: string;
-        StartDate: string;
-        EndDate: string;
+        Days: number;
+        StartDate: Date;
+        EndDate: Date;
     }
