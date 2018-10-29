@@ -19,7 +19,7 @@
                                         <p style="color:#919191">{{getSubCatName(room.RSCatID)}}</p>
                                         <p class="price">₹ {{room.Rent}}</p>
                                         <div class="center">
-                                            <button class="read-more" (click)="booknow(room)">Book Now</button>
+                                            <button class="read-more" *ngIf="this.booklist != false" (click)="booknow(room)">Book Now</button>
                                         </div>
                                         <!-- <div class="book" >Available</div> -->
                                     </div>
