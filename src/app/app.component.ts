@@ -51,4 +51,22 @@ export class AppComponent {
   Aboutus(){
     this.router.navigate(['/aboutus']);
   }
+  
+  myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+closeNav() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+      x.className += " icon";
+  } else {
+      x.className = "topnav";
+  }
+}
 }
