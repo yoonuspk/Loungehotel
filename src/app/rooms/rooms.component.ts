@@ -31,12 +31,12 @@ export class RoomsComponent implements OnInit {
     this.booklist=<Booklist>(this._StrS.getScope());
     
     
-    // if((this.booklist) == false){
+    if((this.booklist) == false){
       this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;this.filteredArray = this.rooms;})
-    // }
-    // else{
-    // this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;  this.filteredArray = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
-    // }
+    }
+    else{
+    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;  this.filteredArray = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
+    }
     this.catSvc.getAllCategories().subscribe(x => { this.categories = x; })
     this.catSvc.getAllSubCategories().subscribe(x => { this.subcategories = x;  })
    }
