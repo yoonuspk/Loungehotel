@@ -62,7 +62,6 @@ public handleError (error: any) {
     return user;
   }
     public  createCustomer(customer: User): Observable<User> {
-    console.log(JSON.stringify(customer));
     return   this._http
       .post(this.url,JSON.stringify(customer), {headers:this.headers1})
       .pipe(map(res => res.json()))
@@ -70,7 +69,6 @@ public handleError (error: any) {
     
   }
   // public  editCustomer(customer: User): Observable<User> {
-  //   console.log(JSON.stringify(customer));
   //   let usr$=this._http
   //     .put(this.url,JSON.stringify(customer), {headers:this.headers1})
   //     .map(res => res.json())
@@ -79,7 +77,6 @@ public handleError (error: any) {
   // }
 
   // public deleteCustomer(UserID: number): Observable<User> {
-  //   console.log(UserID);
   //   const url = `${this.url}?UserID=${UserID}`;
   //   let ret$ =  this._http
   //     .delete(url, {headers:this.headers1})
@@ -100,8 +97,7 @@ public handleError (error: any) {
 
 //   public  createUser(user: User): Observable<User> {
 //     let headers1 = new Headers({ 'Content-Type': 'application/json' });
-//     const url = `${myGlobals.baseAPIUrl}/users`;
-//     console.log(JSON.stringify(user));
+//     const url = `${myGlobals.baseAPIUrl}/users`;\
 //     let usr$=this._http
 //       .post(url,JSON.stringify(user), {headers:headers1})
 //       .map(res => res.json())
@@ -154,7 +150,6 @@ public handleError (error: any) {
 //     MInitial: r.MInitial,
 //     LastUpdatedDate:r.LastUpdatedDate
 //   });
-//   // console.log("Parsed user",user);
 //   return user;
 // }
 

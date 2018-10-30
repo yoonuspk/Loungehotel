@@ -68,7 +68,6 @@
         var sliderTimer;
 
         function updatevariables(functionName) {
-            //console.log(functionName);
             $controlsBlock = $this.find('.' + settings.controlsClass);
             $galleryBlock = $this.find('.gallery__block');
             $prevButton = $this.find('.prev');
@@ -294,7 +293,6 @@
         function createDescription() {
             $galleryBlock.append('<div class="' + _galleryDescriptionClass + '"></div>');
 
-            //console.log(currentBlockIndex);
             $descriptionBlock.each(function() {
                 $('.' + _galleryDescriptionClass).append($(this));
             })
@@ -603,7 +601,6 @@
 
         function autoplay() {
             var countSlides = $imgBlock.length;
-            //console.log('autoplay');
             sliderTimer = setInterval(function() {
 
                 if ( (currentBlockIndex + 1) / countSlides  == 1  ) {

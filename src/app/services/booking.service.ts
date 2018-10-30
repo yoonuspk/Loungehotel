@@ -37,7 +37,6 @@ export class BookingService {
 
 
   public bookrooms(id): Observable<Booking[]>{
-    console.log(id);
     return this._http
       .post(`http://theloungehotel.com/api/bookings.php`,JSON.stringify(id), { headers: this.getHeaders(true)})
       .pipe(map(res=>res.json()));

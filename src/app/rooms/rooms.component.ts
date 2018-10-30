@@ -30,15 +30,15 @@ export class RoomsComponent implements OnInit {
   ngOnInit() {
     this.booklist=<Booklist>(this._StrS.getScope());
     
-    console.log(this.booklist);
-    if((this.booklist) == false){
-      this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x; console.log(this.rooms); this.filteredArray = this.rooms;})
-    }
-    else{
-    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x; console.log(this.rooms); this.filteredArray = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
-    }
-    this.catSvc.getAllCategories().subscribe(x => { this.categories = x; console.log(this.categories) })
-    this.catSvc.getAllSubCategories().subscribe(x => { this.subcategories = x; console.log(this.subcategories) })
+    
+    // if((this.booklist) == false){
+      this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;this.filteredArray = this.rooms;})
+    // }
+    // else{
+    // this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;  this.filteredArray = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
+    // }
+    this.catSvc.getAllCategories().subscribe(x => { this.categories = x; })
+    this.catSvc.getAllSubCategories().subscribe(x => { this.subcategories = x;  })
    }
 
   getCatName(id) {
@@ -52,12 +52,11 @@ export class RoomsComponent implements OnInit {
 
    
   booknow(room) {
-    console.log(room);
+    
     let disposable = this._dialogSvc
       .addDialog(BooknowComponent, {roomObj:room})
       .subscribe((editedIncome) => {
         if (editedIncome) {
-          console.log(editedIncome);
           // let i = this.inc.indexOf(selectedInc);
           // this.inc[i]=editedIncome; //sync the changes back to data model
           // this.populateTable(this.inc); //refresh data table

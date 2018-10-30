@@ -81,7 +81,6 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
   }
 
   submit() {
-    console.log("In submit",this.booklistform.value );
     var booklist=({
       StartDate: this.booklistform.value.StartDate.formatted,
       EndDate: this.booklistform.value.EndDate.formatted,

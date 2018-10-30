@@ -27,9 +27,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.catSvc.getAllCategories().subscribe(x=>{this.categories=x;console.log(this.categories)})
-    this.catSvc.getAllSubCategories().subscribe(x=>{this.subcategories=x;console.log(this.subcategories)})
-    this.roomSvc.getAllRooms().subscribe(x=>{this.rooms=x;console.log(this.rooms)})
+    this.catSvc.getAllCategories().subscribe(x=>{this.categories=x})
+    this.catSvc.getAllSubCategories().subscribe(x=>{this.subcategories=x})
+    this.roomSvc.getAllRooms().subscribe(x=>{this.rooms=x})
     
     this.bform = this.fb.group({
       RID: [''],
@@ -51,12 +51,10 @@ export class HomeComponent implements OnInit {
   }
 
   roombook(){
-    console.log("hello");
     let disposable = this._dialogSvc
                 .addDialog(BooklistComponent, {}) 
                 .subscribe((editedIncome)=> {
                     if(editedIncome){
-                        console.log(editedIncome);
                         // let i = this.inc.indexOf(selectedInc);
                         // this.inc[i]=editedIncome; //sync the changes back to data model
                         // this.populateTable(this.inc); //refresh data table

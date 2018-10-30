@@ -36,7 +36,6 @@ export class BooknowComponent extends DialogComponent<bookArg, any> implements b
   ngOnInit() {
     this.booklist=<Booklist>(this._StrS.getScope());
     
-    console.log(this.booklist,this.roomObj);
     this.userform = this.fb.group({
       Name: [''],
       Email: [''],
@@ -56,19 +55,18 @@ submit(){
       
         this.userS.createCustomer(this.prepareSaveUser())
           .subscribe(x => {
-            console.log(x);this.user=x;
+            this.user=x;
               this.roomS.getAllRooms().subscribe(x => {
               this.rooms = x;
               this.roomchecked=true;
                 this.room = this.rooms.filter(x => x.RCatID == this.roomObj.RCatID && x.RSCatID == this.roomObj.RSCatID);
-                this.bookingSvc.bookrooms(this.prepareSaveCustomer()).subscribe(x =>  console.log(x))
+                this.bookingSvc.bookrooms(this.prepareSaveCustomer()).subscribe(x =>  x)
                 window.alert("Booking Successfull");
                 this.close();
               })})
       }
                 
     prepareSaveUser(): User {
-      console.log(this.userform.value);
       const formModel = this.userform.value;
       const savebooking: User = {
         Name: formModel.Name,
@@ -83,12 +81,10 @@ submit(){
         Role: "3",
         Mobile: formModel.Mobile,
       }
-      console.log(savebooking);
       return savebooking;
     }
 
     prepareSaveCustomer(): Booking {
-      // console.log(this.bookform.value);
       // const formModel = this.bookform.value;
       if(this.booklist){
       var days= this.booklist.StartDate.valueOf() -this.booklist.EndDate.valueOf();
@@ -102,7 +98,6 @@ submit(){
         StartDate: this.booklist.StartDate,
         EndDate: this.booklist.EndDate,
       }
-      console.log(savebooking);
       return savebooking;
     }
     }
