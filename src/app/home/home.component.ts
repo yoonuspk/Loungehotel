@@ -42,14 +42,17 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getCatName(id, cat){
-    return cat[id-1].CatName;
-  }
-  
-  getSubCatName(id, cat){
-    return cat[id-1].SCatName;
+  getCatName(id) {
+    if(id){
+    return this.categories.find(x=>x.CatID == id).CatName;
+    }
   }
 
+  getSubCatName(id) {
+    if(id){
+    return this.subcategories.find(x=>x.SCatID == id).SCatName;
+    }
+  }
   roombook(){
     let disposable = this._dialogSvc
                 .addDialog(BooklistComponent, {}) 

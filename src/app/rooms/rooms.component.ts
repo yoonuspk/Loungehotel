@@ -20,7 +20,9 @@ export class RoomsComponent implements OnInit {
   categories: Category[];
   subcategories: SubCategory[];
   booklist: any;
-  filteredArray: Room[];
+  // filteredArray: Room[];
+  cat: Category[];
+  subcat: SubCategory[];
   constructor(private roomSvc: RoomsService,
     private catSvc: CategoryService, private _dialogSvc: DialogService,
     private _StrS:StorageService) {
@@ -32,22 +34,23 @@ export class RoomsComponent implements OnInit {
     
     
     if((this.booklist) == false){
-      this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;this.filteredArray = this.rooms;})
+      this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;})
     }
     else{
-    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;  this.filteredArray = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
+    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;  this.rooms = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
     }
-    this.catSvc.getAllCategories().subscribe(x => { this.categories = x; })
-    this.catSvc.getAllSubCategories().subscribe(x => { this.subcategories = x;  })
    }
 
-  getCatName(id) {
-    return this.categories.find(x=>x.CatID == id).CatName;
-  }
-
-  getSubCatName(id) {
-    return this.subcategories.find(x=>x.SCatID == id).SCatName;
-  }
+   getCatName(id) {
+     this.cat = <Category[]>(this._StrS.getScopeCat());
+     return this.cat.find(x=>x.CatID == id).CatName;
+   }
+ 
+   getSubCatName(id) {
+     this.subcat = <SubCategory[]>(this._StrS.getScopeSCat());
+     return this.subcat.find(x=>x.SCatID == id).SCatName;
+     
+   }
 
 
    

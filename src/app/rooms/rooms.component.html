@@ -10,12 +10,12 @@
                 <div class="row">
                     <div id="rooms" class="owl-carousel owl-theme">
                         <div class="item">
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let room of this.filteredArray">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let room of this.rooms">
                                 <div class="wrap-box">
                                     <div class="box-img" *ngIf="room.Image[0]">
                                         <img src="http://theloungehotel.com/{{room.Image[0].Name}}" class="img-responsive">
                                     </div>
-                                    <div class="rooms-content" >
+                                    <div class="rooms-content" *ngIf="room.RCatID">
                                         <h4 class="sky-h4">{{getCatName(room.RCatID)}}</h4>
                                         <p style="color:#919191">{{getSubCatName(room.RSCatID)}}</p>
                                         <p class="price">₹ {{room.Rent}}</p>

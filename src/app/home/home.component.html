@@ -94,13 +94,13 @@
                     <div class="item">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let room of this.rooms | slice:0:6">
                             <div class="wrap-box">
-                                <div class="box-img" *ngIf="room.Image[0]">
+                                <div class="box-img" *ngIf="room.Image">
                                     <img src="http://theloungehotel.com/{{room.Image[0].Name}}" class="img-responsive" alt="{{getCatName(room.RCatID, this.categories)}}"
                                         title="{{getCatName(room.RCatID, this.categories)}}">
                                 </div>
-                                <div class="rooms-content">
-                                    <h4 class="sky-h4">{{getCatName(room.RCatID, this.categories)}}</h4>
-                                    <p style="color:#919191">{{getSubCatName(room.RSCatID, this.subcategories)}}</p>
+                                <div class="rooms-content" *ngIf="room.RCatID">
+                                    <h4 class="sky-h4">{{getCatName(room.RCatID)}}</h4>
+                                    <p style="color:#919191">{{getSubCatName(room.RSCatID)}}</p>
                                     <p class="price">₹ {{room.Rent}}</p>
                                 </div>
                             </div>

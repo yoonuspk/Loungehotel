@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http, Response, Headers} from '@angular/http';
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
+import { Room } from "../domains/rooms";
 
 /**
  * @description
@@ -15,7 +16,7 @@ export class RoomsService {
     
   }
 
-  public getAllRooms() {
+  public getAllRooms():Observable<Room[]> {
     return this._http.get(`http://theloungehotel.com/api/rooms.php`, { headers: this.getHeaders(true)})
                      .pipe(map(res=>res.json()));
           }
