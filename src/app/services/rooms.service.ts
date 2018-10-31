@@ -17,19 +17,19 @@ export class RoomsService {
   }
 
   public getAllRooms():Observable<Room[]> {
-    return this._http.get(`http://theloungehotel.com/api/rooms.php`, { headers: this.getHeaders(true)})
+    return this._http.get(`http://theloungehotel.com/api/rooms.php`, {})
                      .pipe(map(res=>res.json()));
           }
   
 
-  public getHeaders(read:boolean){
-    let headers = new Headers();
-    if (read)
-        headers.append('Accept', 'application/json');
-    else
-        headers.append('Content-Type', 'application/json');
-    return headers;
-}
+//   public getHeaders(read:boolean){
+//     let headers = new Headers();
+//     if (read)
+//         headers.append('Accept', 'application/json');
+//     else
+//         headers.append('Content-Type', 'application/json');
+//     return headers;
+// }
 
 public handleError (error: any) {
     let errorMsg = error.message || `Yikes! There was a problem with our API Service and we couldn't retrieve your data!`

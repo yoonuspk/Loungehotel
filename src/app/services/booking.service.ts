@@ -23,13 +23,13 @@ export class BookingService {
 
   public getUserById(id): Observable<User>{
     return this._http
-    .get(`http://theloungehotel.com/api/users.php?ID=${id}`, { headers: this.getHeaders(true)})
+    .get(`http://theloungehotel.com/api/users.php?ID=${id}`, {})
     .pipe(map(res=>res.json()));
   }
 
   public getAllRooms(): Observable<Booking[]>{
     return this._http
-      .get(`http://theloungehotel.com/api/bookings.php`, { headers: this.getHeaders(true)})
+      .get(`http://theloungehotel.com/api/bookings.php`, {})
       .pipe(map(res=>res.json()));
     // return booking$;
   }
@@ -38,19 +38,19 @@ export class BookingService {
 
   public bookrooms(id): Observable<Booking[]>{
     return this._http
-      .post(`http://theloungehotel.com/api/bookings.php`,JSON.stringify(id), { headers: this.getHeaders(true)})
+      .post(`http://theloungehotel.com/api/bookings.php`,JSON.stringify(id), {})
       .pipe(map(res=>res.json()));
     // return booking$;
   }
 
-  public getHeaders(read:boolean){
-    let headers = new Headers();
-    if (read)
-        headers.append('Accept', 'application/json');
-    else
-        headers.append('Content-Type', 'application/json');
-    return headers;
-}
+//   public getHeaders(read:boolean){
+//     let headers = new Headers();
+//     if (read)
+//         headers.append('Accept', 'application/json');
+//     else
+//         headers.append('Content-Type', 'application/json');
+//     return headers;
+// }
 
 public handleError (error: any) {
     let errorMsg = error.message || `Yikes! There was a problem with our API Service and we couldn't retrieve your data!`
