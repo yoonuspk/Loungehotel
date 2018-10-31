@@ -20,7 +20,11 @@
                   <div class="col-md-4" >      
                        <my-date-picker name="mydate" [options]="myDatePickerOptions"
                         formControlName="StartDate" required></my-date-picker>
-                    
+                        <small style="color:red"  [hidden]="booklistform.controls.StartDate.valid || (booklistform.controls.StartDate.pristine && !booklistform.submitted)">
+                          Check-in Date is required .</small>
+                          <small style="color:red"  *ngIf="this.error && !this.booklistform.value.StartDate">
+                            Check-in Date is required .</small>
+
                   </div>
 
                   <div class="col-md-2" style="padding-left: 40px">
@@ -31,6 +35,11 @@
                   <div class="col-md-4" >      
                        <my-date-picker name="mydates" [options]="myDatePickerOptions" formControlName="EndDate"
                        required></my-date-picker>
+                       <small style="color:red" [hidden]=" booklistform.controls.EndDate.valid || (booklistform.controls.EndDate.pristine && !booklistform.submitted)">
+                        Check-out Date is required .</small>
+                        <small style="color:red"  *ngIf="this.error && !this.booklistform.value.EndDate">
+                          Check-in Date is required .</small>
+
                   </div>
                 </div>
 
@@ -41,7 +50,12 @@
                       </label>
                   </div>
                   <div class="col-md-4">     
-                        <input type="number" formControlName="Days" formControlName="Adults">
+                        <input type="number" formControlName="Adults">
+                        <small style="color:red"  [hidden]="booklistform.controls.Adults.valid || (booklistform.controls.Adults.pristine && !booklistform.submitted)">
+                          Count is required .</small>
+                          <small style="color:red"  *ngIf="this.error && !this.booklistform.value.Adults">
+                            Check-in Date is required .</small>
+
                   </div>
                   <div class="col-md-2" style="padding-left: 40px">
                         <label >Childrens:
@@ -56,7 +70,8 @@
           </div>
 
         <div class="center" style="margin-top:0%;padding-top: 0%">
-          <button type="submit" class="read-more">Submit</button>
+          <button type="submit" *ngIf="booklistform.valid && !booklistform.invalid " class="read-more" [disabled]="booklistform&&(booklistform.pristine||booklistform.invalid)" >Submit</button>
+          <button type="button" class="read-more" *ngIf="booklistform.invalid && !booklistform.valid"  (click)="this.error=true" >Submit</button>
           &nbsp;
           <button type="button" class="read-more" (click)="this.close()">Close</button>
         </div>

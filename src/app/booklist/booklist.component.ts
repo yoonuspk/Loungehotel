@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Booking } from "../domains/bookings";
 import { BookingService } from "../services/booking.service";
 import { UserService } from "../services/user.service";
@@ -45,7 +45,7 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
     disableUntil: {year: 2016, month: 8, day: 10}
   };
   booklistform: FormGroup;
-
+  error:boolean=false;
   // myDatePickerOptionss: IMyDpOptions = {
   //   selectorHeight : '50px',
   //   todayBtnTxt: 'Today',
@@ -73,9 +73,9 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
     this.booklistform = this.fb.group({
    
       
-      StartDate: [''],
-      EndDate: [''],
-      Adults:[''],
+      StartDate: ['',<any>Validators.required],
+      EndDate: ['',<any>Validators.required],
+      Adults:['',<any>Validators.required],
       Childrens:['']
     });
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
 import { UserService } from "../services/user.service";
 import { User } from "../domains/user";
@@ -26,7 +26,7 @@ export class BooknowComponent extends DialogComponent<bookArg, any> implements b
   room: any;
   roomchecked: boolean;
   user: User;
-  
+  error:boolean=false;
   constructor(private fb:FormBuilder,private _dialogSvc: DialogService,private userS:UserService,
           private _StrS:StorageService,private roomS:RoomsService,
          private  bookingSvc:BookingService) { 
@@ -37,8 +37,8 @@ export class BooknowComponent extends DialogComponent<bookArg, any> implements b
     this.booklist=<Booklist>(this._StrS.getScope());
     
     this.userform = this.fb.group({
-      Name: [''],
-      Email: [''],
+      Name: ['',<any>Validators.required],
+      Email: ['',<any>Validators.required],
       Address: [''],
       City: [''],
       State: [''],
@@ -47,7 +47,7 @@ export class BooknowComponent extends DialogComponent<bookArg, any> implements b
       UserName: [''],
       Password: [''],
       Role: [''],
-      Mobile: ['']
+      Mobile: ['',<any>Validators.required]
     });
 }
 submit(){
