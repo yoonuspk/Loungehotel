@@ -12382,7 +12382,7 @@ body {
 
 
   @media (max-width: 480px) {
-    .rooms .title-room {
+    .rooms .title-room, .about .about-title, .gallery-our .gallery .title-gallery{
       font-size: 25px;
       font-weight: 400;
       font-family: 'Playfair Display', serif; }
