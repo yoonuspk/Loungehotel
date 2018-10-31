@@ -12378,6 +12378,16 @@ body {
   font-weight: 400;
   font-family: 'Playfair Display', serif; }
 
+  
+
+
+  @media (max-width: 480px) {
+    .rooms .title-room {
+      font-size: 25px;
+      font-weight: 400;
+      font-family: 'Playfair Display', serif; }
+  }
+  
 .sky-h3 {
   color: #fff;
   font-size: 36px;
