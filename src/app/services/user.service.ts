@@ -17,7 +17,6 @@ import { User } from '../domains/user';
 @Injectable()
 export class UserService {
   public url = `http://theloungehotel.com/api/users.php`;
-  public  headers1 = new Headers({ 'Content-Type': 'application/json' });
   usr:any;
   constructor (
     private _http: Http,
@@ -63,7 +62,7 @@ public handleError (error: any) {
   }
     public  createCustomer(customer: User): Observable<User> {
     return   this._http
-      .post(this.url,JSON.stringify(customer), {headers:this.headers1})
+      .post(this.url,JSON.stringify(customer), {})
       .pipe(map(res => res.json()))
       // .catch(this.handleError);
     

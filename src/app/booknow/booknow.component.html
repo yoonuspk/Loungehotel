@@ -1,13 +1,14 @@
 <!--component html goes here -->
 <div class="modal-dialog modal-lg" draggable="true" style="overflow:auto;height: 450px">
     <div class="modal-content">
+        <div style="float:right"><i class="fa fa-times" (click)="this.close()"></i></div>
         <div class="modal-title">Your Details</div>
         <div class="center">
             <img src="http://theloungehotel.com/assets/images/Home-1/icon-our.png">
         </div>
         <form [formGroup]="userform" (ngSubmit)="submit()">
             <div style="border:1px;">
-                <div class="row" style="padding-top: 25px">
+                <div class="row" style="padding-top: 18px">
                     <div class="col-md-2" style="padding-left: 40px">
                         <label>Name:
                             <sup>*</sup>
@@ -25,7 +26,7 @@
                         <input type="text" formControlName="Days" formControlName="Email">
                     </div>
                 </div>
-                <div class="row" style="padding-top: 25px">
+                <div class="row" style="padding-top: 18px">
                     <div class="col-md-2" style="padding-left: 40px">
                         <label>Moblie:
                             <sup>*</sup>
@@ -43,7 +44,7 @@
                         <input type="text" formControlName="Address">
                     </div>
                 </div>
-                <div class="row" style="padding-top: 25px">
+                <div class="row" style="padding-top: 18px">
                     <div class="col-md-2" style="padding-left: 40px">
                         <label>City:
                             <sup>*</sup>
@@ -62,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="center" style="margin-top:0%">
+            <div class="center" style="margin-top:0%;padding-top: 0%">
                 <button type="submit" class="read-more">Book</button>
                 &nbsp;
                 <button type="button" class="read-more" (click)="this.close()">Close</button>
