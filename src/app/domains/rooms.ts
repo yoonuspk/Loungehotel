@@ -4,6 +4,7 @@ export interface Room {
     RSCatID: number;
     CapID: number;
     Rent:number;
+    RentWithoutGST:number;
     Room_No: number;
     Image: Image[];
     BookedYN: boolean;

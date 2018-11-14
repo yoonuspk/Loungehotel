@@ -18,7 +18,9 @@
                                     <div class="rooms-content" *ngIf="room.RCatID">
                                         <h4 class="sky-h4">{{getCatName(room.RCatID)}}</h4>
                                         <p style="color:#919191">{{getSubCatName(room.RSCatID)}}</p>
-                                        <p class="price">₹ {{room.Rent}}</p>
+                                        <p class="price" style="font-size: 25px">₹ {{room.RentWithoutGST}}</p>
+                                        <!-- <p class="price" style="color: black">₹ {{room.Rent}}</p>  -->
+                                        <p style="color:#adadad;font-size: 11px">(Tax not included..)
                                         <div class="center">
                                             <button class="read-more" *ngIf="this.booklist != false" (click)="booknow(room)">Book Now</button>
                                         </div>
