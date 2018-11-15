@@ -1,82 +1,106 @@
 <!--component html goes here -->
 <div class="modal-dialog modal-lg" draggable="true" style="overflow:auto;height: 480px">
 
-    <div class="modal-content">
-      <div style="float:right"><i class="fa fa-times" (click)="this.close()"></i></div>
-        <div class="modal-title">Book Rooms </div>
-          <div class="center">
-            <img src="http://theloungehotel.com/assets/images/Home-1/icon-our.png">
+  <div class="modal-content">
+    <div style="float:right"><i class="fa fa-times" (click)="this.close()"></i></div>
+    <div class="modal-title">Book Rooms </div>
+    <div class="center">
+      <img src="http://theloungehotel.com/assets/images/Home-1/icon-our.png">
+    </div>
+    <form [formGroup]="booklistform" (ngSubmit)="submit()">
+
+      <div style="border:1px;">
+
+        <div class="row" style="padding-top: 10px">
+          <div class="col-md-2" style="padding-left: 40px">
+            <label>Check-in:
+              <sup>*</sup>
+            </label>
           </div>
-      <form [formGroup]="booklistform" (ngSubmit)="submit()">
+          <div class="col-md-4">
+            <my-date-picker name="mydate" [options]="myDatePickerOptions" formControlName="StartDate" required></my-date-picker>
+            <small style="color:red" [hidden]="booklistform.controls.StartDate.valid || (booklistform.controls.StartDate.pristine && !booklistform.submitted)">
+              Check-in Date is required .</small>
+            <small style="color:red" *ngIf="this.error && !this.booklistform.value.StartDate">
+              Check-in Date is required .</small>
 
-          <div style="border:1px;">
-
-                <div class="row" style="padding-top: 10px">
-                  <div class="col-md-2" style="padding-left: 40px">
-                        <label>Check-in:
-                          <sup>*</sup>
-                        </label>
-                  </div>
-                  <div class="col-md-4" >      
-                       <my-date-picker name="mydate" [options]="myDatePickerOptions"
-                        formControlName="StartDate" required></my-date-picker>
-                        <small style="color:red"  [hidden]="booklistform.controls.StartDate.valid || (booklistform.controls.StartDate.pristine && !booklistform.submitted)">
-                          Check-in Date is required .</small>
-                          <small style="color:red"  *ngIf="this.error && !this.booklistform.value.StartDate">
-                            Check-in Date is required .</small>
-
-                  </div>
-
-                  <div class="col-md-2" style="padding-left: 40px">
-                        <label>Check-out:
-                          <sup>*</sup>
-                        </label>
-                  </div>
-                  <div class="col-md-4" >      
-                       <my-date-picker name="mydates" [options]="myDatePickerOptions" formControlName="EndDate"
-                       required></my-date-picker>
-                       <small style="color:red" [hidden]=" booklistform.controls.EndDate.valid || (booklistform.controls.EndDate.pristine && !booklistform.submitted)">
-                        Check-out Date is required .</small>
-                        <small style="color:red"  *ngIf="this.error && !this.booklistform.value.EndDate">
-                          Check-in Date is required .</small>
-
-                  </div>
-                </div>
-
-                <div class="row" style="padding-top: 10px">
-                  <div class="col-md-2" style="padding-left: 40px">
-                      <label >Adults
-                        <sup>*</sup>
-                      </label>
-                  </div>
-                  <div class="col-md-4">     
-                        <input type="number" formControlName="Adults">
-                        <small style="color:red"  [hidden]="booklistform.controls.Adults.valid || (booklistform.controls.Adults.pristine && !booklistform.submitted)">
-                          Count is required .</small>
-                          <small style="color:red"  *ngIf="this.error && !this.booklistform.value.Adults">
-                            Check-in Date is required .</small>
-
-                  </div>
-                  <div class="col-md-2" style="padding-left: 40px">
-                        <label >Childrens:
-                          <sup>*</sup>
-                        </label>
-                  </div>
-                  <div class="col-md-4">
-                          <input type="number" formControlName="Childrens">
-                  </div>
-                </div>
-                
           </div>
 
-        <div class="center" style="margin-top:0%;padding-top: 0%">
-          <button type="submit" *ngIf="booklistform.valid && !booklistform.invalid " class="read-more" [disabled]="booklistform&&(booklistform.pristine||booklistform.invalid)" >Submit</button>
-          <button type="button" class="read-more" *ngIf="booklistform.invalid && !booklistform.valid"  (click)="this.error=true" >Submit</button>
-          &nbsp;
-          <button type="button" class="read-more" (click)="this.close()">Close</button>
+          <div class="col-md-2" style="padding-left: 40px">
+            <label>Check-out:
+              <sup>*</sup>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <my-date-picker name="mydates" [options]="myDatePickerOptions" formControlName="EndDate" required></my-date-picker>
+            <small style="color:red" [hidden]=" booklistform.controls.EndDate.valid || (booklistform.controls.EndDate.pristine && !booklistform.submitted)">
+              Check-out Date is required .</small>
+            <small style="color:red" *ngIf="this.error && !this.booklistform.value.EndDate">
+              Check-out Date is required .</small>
+
+          </div>
         </div>
 
-      </form>
+        <div class="row" style="padding-top: 10px">
+          <div class="col-md-2" style="padding-left: 40px">
+            <label>Adults
+              <sup>*</sup>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <input type="number" formControlName="Adults">
+            <small style="color:red" [hidden]="booklistform.controls.Adults.valid || (booklistform.controls.Adults.pristine && !booklistform.submitted)">
+              Count is required .</small>
+            <small style="color:red" *ngIf="this.error && !this.booklistform.value.Adults">
+              Count is required .</small>
 
-    </div>
+          </div>
+          <div class="col-md-2" style="padding-left: 40px">
+            <label>Childrens:
+              <sup>*</sup>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <input type="number" formControlName="Childrens">
+          </div>
+          <div *ngIf="this.booklistform.value.Childrens">
+            <div *ngFor="let k of Arr(this.booklistform.value.Childrens)">
+              <div class="col-md-6" ></div>
+              <div class="col-md-2" style="padding-left: 40px" >
+                <label>Child age :
+                  <sup>*</sup>
+                </label>
+              </div>
+              <div class="col-md-4" >
+                <select style="height: 41px;width: 79px;">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="center" style="margin-top:0%;padding-top: 0%">
+        <button type="submit" *ngIf="booklistform.valid && !booklistform.invalid " class="read-more" [disabled]="booklistform&&(booklistform.pristine||booklistform.invalid)">Submit</button>
+        <button type="button" class="read-more" *ngIf="booklistform.invalid && !booklistform.valid" (click)="this.error=true">Submit</button>
+        &nbsp;
+        <button type="button" class="read-more" (click)="this.close()">Close</button>
+      </div>
+
+    </form>
+
   </div>
+</div>

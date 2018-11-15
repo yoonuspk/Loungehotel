@@ -32,7 +32,7 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
   rooms: Room[];
   room: Room[];
   roomchecked: boolean=false;
-
+  Arr = Array; //Array type captured in a variable
   myDatePickerOptions: IMyDpOptions = {
     selectorHeight:"220px",
     selectorWidth:"95%",
@@ -78,6 +78,7 @@ export class BooklistComponent extends DialogComponent<bookArg, any> implements 
       Adults:['',<any>Validators.required],
       Childrens:['']
     });
+   
   }
 
   submit() {
