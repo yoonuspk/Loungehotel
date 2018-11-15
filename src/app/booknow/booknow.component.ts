@@ -99,16 +99,28 @@ submit(){
         var b = moment(StartD);
          this.days=a.diff(b, 'days') 
          console.log(this.days);
+         if(this.days == 0){
+           this.days = 1;
+         }
       }
       if(this.room && this.booklist){
+        let Totalrent:number=0;
+        console.log(this.booklist.Adults,this.room[0].Adults);
+        if(this.booklist.Adults >this.room[0].Adults){
+           Totalrent=Number(this.room[0].Rent)+200;
+          console.log(Totalrent);
+        }
+        else{
+          Totalrent=this.room[0].Rent;
+        }
       const savebooking: Booking = {
         BID: null,
         UID: this.user[0].UserID,
         RID: this.room[0].RID,
         NotyfiedYN: null,
-        Rent: this.room[0].Rent,
-        Adult:  this.booklist.Adult,
-        Children: this.booklist.Children,
+        Rent: Totalrent,
+        Adult:  this.booklist.Adults,
+        Children: this.booklist.Childrens,
         ExtraBedYN: null,
         Days: this.days,
         StartDate: this.booklist.StartDate,

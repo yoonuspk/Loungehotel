@@ -7,7 +7,7 @@
         StartDate: string;
         EndDate: string;
         NotyfiedYN: string;
-        Rent: string;
+        Rent: number;
         Adult: string;
         Children: string;
         ExtraBedYN: string;

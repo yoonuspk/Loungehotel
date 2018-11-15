@@ -31,13 +31,13 @@ export class RoomsComponent implements OnInit {
 
   ngOnInit() {
     this.booklist=<Booklist>(this._StrS.getScope());
-    
+    console.log(this.booklist);
     
     if((this.booklist) == false){
       this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;})
     }
     else{
-    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;  this.rooms = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); })
+    this.roomSvc.getAllRooms().subscribe(x => { this.rooms = x;this.rooms = this.rooms.filter(x=>x.Adults <= this.booklist.Adults); console.log(this.rooms); })
     }
    }
 
