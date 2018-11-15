@@ -107,8 +107,10 @@ submit(){
         let Totalrent:number=0;
         console.log(this.booklist.Adults,this.room[0].Adults);
         if(this.booklist.Adults >this.room[0].Adults){
+          if(this.booklist.Adults != 2){
            Totalrent=Number(this.room[0].Rent)+200;
           console.log(Totalrent);
+          }
         }
         else{
           Totalrent=this.room[0].Rent;
