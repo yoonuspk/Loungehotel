@@ -9,6 +9,7 @@ import { RoomsService } from "../services/rooms.service";
 import { Room } from "../domains/rooms";
 import { BookingService } from "../services/booking.service";
 import { Booking } from "../domains/bookings";
+import * as moment from 'moment';
 export interface bookArg {
   roomObj:Room;
 }
@@ -27,6 +28,7 @@ export class BooknowComponent extends DialogComponent<bookArg, any> implements b
   roomchecked: boolean;
   user: User;
   error:boolean=false;
+  days: number;
   constructor(private fb:FormBuilder,private _dialogSvc: DialogService,private userS:UserService,
           private _StrS:StorageService,private roomS:RoomsService,
          private  bookingSvc:BookingService) { 
@@ -49,11 +51,12 @@ export class BooknowComponent extends DialogComponent<bookArg, any> implements b
       Role: [''],
       Mobile: ['',<any>Validators.required]
     });
+   
+      
+   
 }
 submit(){
-  
-      
-        this.userS.createCustomer(this.prepareSaveUser())
+  this.userS.createCustomer(this.prepareSaveUser())
           .subscribe(x => {
             this.user=x;
               this.roomS.getAllRooms().subscribe(x => {
@@ -84,20 +87,34 @@ submit(){
       return savebooking;
     }
 
-    prepareSaveCustomer(): Booking {
+    prepareSaveCustomer() {
       // const formModel = this.bookform.value;
       if(this.booklist){
-      var days= this.booklist.StartDate.valueOf() -this.booklist.EndDate.valueOf();
+        console.log(this.booklist,this.booklist.StartDate);
+        let StartD = this.booklist.StartDate.replace('-',',').replace('-',',');
+        let EndD = this.booklist.EndDate.replace('-',',').replace('-',',');
+        console.log(StartD,EndD);
+        
+        var a = moment(EndD);
+        var b = moment(StartD);
+         this.days=a.diff(b, 'days') 
+         console.log(this.days);
       }
       if(this.room && this.booklist){
       const savebooking: Booking = {
         BID: null,
         UID: this.user[0].UserID,
         RID: this.room[0].RID,
-        Days: days,
+        NotyfiedYN: null,
+        Rent: this.room[0].Rent,
+        Adult:  this.booklist.Adult,
+        Children: this.booklist.Children,
+        ExtraBedYN: null,
+        Days: this.days,
         StartDate: this.booklist.StartDate,
         EndDate: this.booklist.EndDate,
       }
+      console.log(savebooking);
       return savebooking;
     }
     }

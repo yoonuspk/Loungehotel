@@ -2,8 +2,13 @@
     export interface Booking {
         BID: string;
         UID: string;
-        RID: number;
+        RID: string;
         Days: number;
-        StartDate: Date;
-        EndDate: Date;
+        StartDate: string;
+        EndDate: string;
+        NotyfiedYN: string;
+        Rent: string;
+        Adult: string;
+        Children: string;
+        ExtraBedYN: string;
     }
